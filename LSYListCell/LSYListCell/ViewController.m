@@ -22,10 +22,11 @@
     _listCell =  [[LSYListCell alloc] init];
     _tableView.delegate = _listCell;
     _tableView.dataSource = _listCell;
-    _listCell.tabViewDelegate = self;
+    _listCell.tableViewDelegate = self;
     _listCell.tableViewDataSource = self;
+    _listCell.defalutListCell = LSYDefalutListClose;
     
-    _sectionArray = @[@"first",@"second",@"third",@"hehe"];
+    _sectionArray = @[@"first",@"second",@"third",@"four"];
     [_tableView registerClass:[UITableViewCell class]  forCellReuseIdentifier:@"cell"];
     [_tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"section"];
     // Do any additional setup after loading the view, typically from a nib.

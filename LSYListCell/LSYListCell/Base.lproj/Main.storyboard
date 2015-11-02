@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -28,7 +29,13 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="axN-bL-b4t" secondAttribute="bottom" id="Aga-2E-lWb"/>
                             <constraint firstItem="axN-bL-b4t" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="euo-Xx-nWa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="axN-bL-b4t" secondAttribute="trailing" constant="-20" id="l13-Mj-Eg2"/>
+                            <constraint firstItem="axN-bL-b4t" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="y8V-VW-BlJ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="euo-Xx-nWa"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="axN-bL-b4t" id="lfI-KO-mZK"/>
@@ -36,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160" y="349"/>
+            <point key="canvasLocation" x="335" y="361"/>
         </scene>
     </scenes>
 </document>
