@@ -22,7 +22,6 @@
     _listCell =  [[LSYListCell alloc] init];
     _tableView.delegate = _listCell;
     _tableView.dataSource = _listCell;
-    _listCell.numberOfsections = 10;
     _listCell.tabViewDelegate = self;
     _listCell.tableViewDataSource = self;
     

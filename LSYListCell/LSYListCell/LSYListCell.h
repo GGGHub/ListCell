@@ -12,5 +12,4 @@
 @property (nonatomic,weak) id<UITableViewDataSource>tableViewDataSource;
 @property (nonatomic,weak) id<UITableViewDelegate>tabViewDelegate;
 @property (nonatomic) BOOL defalutListCell;  //设置默认默认列表是不是展开的，默认不展开，(0 -- 不展开 1 -- 展开)
-@property (nonatomic) NSInteger numberOfsections;
 @end

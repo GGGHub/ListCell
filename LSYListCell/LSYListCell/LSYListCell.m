@@ -13,7 +13,6 @@
 @end
 
 static const void *kSelectCellSectionKey;
-static const void *kCellUnfoldKey;
 static const void *kTableViewCellKey;
 @implementation LSYListCell
 {
@@ -26,13 +25,6 @@ static const void *kTableViewCellKey;
         _sectionStateArray = [NSMutableArray array];
     }
     return self;
-}
--(void)setNumberOfsections:(NSInteger)numberOfsections
-{
-    _numberOfsections = numberOfsections;
-    for (int i = 0; i<numberOfsections; i++) {
-        [_sectionStateArray addObject:[NSNumber numberWithBool:_defalutListCell]];
-    }
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -83,6 +75,10 @@ static const void *kTableViewCellKey;
         {
             tapGestureRecognizer = ret.gestureRecognizers.firstObject;
         }
+        if (_sectionStateArray.count < section+1) {
+            [_sectionStateArray insertObject:[NSNumber numberWithBool:_defalutListCell] atIndex:section];
+        }
+        
         objc_setAssociatedObject(tapGestureRecognizer, &kSelectCellSectionKey, [NSNumber numberWithInteger:section], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
         [ret addGestureRecognizer:tapGestureRecognizer];
@@ -97,7 +93,6 @@ static const void *kTableViewCellKey;
         NSNumber *select = _sectionStateArray[[section integerValue]];
         select = [NSNumber numberWithBool:![select boolValue]];
         _sectionStateArray[[section integerValue]] = select;
-        NSLog(@"%@",select);
         [tableView reloadSections:[NSIndexSet indexSetWithIndex:[section integerValue]] withRowAnimation:UITableViewRowAnimationFade];
     }
     
